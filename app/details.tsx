@@ -15,10 +15,38 @@ export default function Details() {
 
   const largeurNum = parseFloat(numLar);
   const hauteurNum = parseFloat(numHaut);
+
   // to calculat
-  const calculLargeur = largeurNum /12;
-  const calculHauteur = hauteurNum/13;
+  let calculLargeur =0;
+  let largeurFinal = 0;
+  let numresult = 0;
   
+  for (let i = 1 ; i< 36; i++){
+     calculLargeur = largeurNum /i;
+     //console.log("befor if",i);
+    if (32 < calculLargeur && calculLargeur < 36){
+      calculLargeur
+      numresult = i;
+    largeurFinal = Number.parseFloat(calculLargeur).toFixed(2);
+    }
+  }
+// clacul de Hauteur
+let calculHauteur = 0;
+let hauterFinal = 0;
+let numHauteur = 0
+for (let i = 1 ; i<87; i++){
+  calculHauteur = hauteurNum /i;
+  console.log("befor if",i);
+ if (87.5 <= calculHauteur && calculHauteur <= 88.5){
+   calculHauteur
+   numHauteur = i;
+ hauterFinal = Number.parseFloat(calculHauteur).toFixed(2);
+ console.log("fucking Final result",hauterFinal);
+ console.log("fucking number",numHauteur);
+ }
+ //console.log("th R",calculHauteur);
+ 
+}
 
   return (
     
@@ -75,15 +103,17 @@ export default function Details() {
       {/* the result part after clicking on calculate */}
 
         {showResult && (
+      <View style = {styles.resultSection}>
 
-          <View style = {styles.resultSection}>
           <Text>text of the result part</Text>
-          <Text> Result largeur: {calculLargeur}</Text>
-          <Text> Result hauteur: {calculHauteur}</Text>
-          <Text> largeur donne : {largeurNum}</Text>
-          <Text> hauteur donne : {hauteurNum}</Text>
 
+          {largeurFinal >32 && largeurFinal <36 ?
+          (<View><Text> the Result :{largeurFinal}</Text> </View>):(
+          <View><Text>Error message</Text> </View>)}; 
 
+           {(hauterFinal > 87.5 && hauterFinal < 88.5) ?
+          <Text>Resultat Hauteur : {hauterFinal}</Text>:(
+            <Text> Erreur de hauteur</Text> )};
           
 
       </View>
