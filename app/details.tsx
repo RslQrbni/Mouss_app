@@ -95,7 +95,7 @@ for (let i = 1 ; i<87; i++){
 
         <View>
           <Text>
-          {calculate ?"mytext":"clcikc kon"} 
+          {calculate ?"mytext":"click kon"} 
 
           </Text>
           </View>
@@ -113,7 +113,7 @@ for (let i = 1 ; i<87; i++){
 
            {(hauterFinal > 87.5 && hauterFinal < 88.5) ?
           <Text>Resultat Hauteur : {hauterFinal}</Text>:(
-            <Text> Erreur de hauteur</Text> )};
+            <Text> Erreur de hauteur</Text> )}
           
 
       </View>

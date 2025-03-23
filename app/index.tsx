@@ -2,6 +2,8 @@ import { Link, Stack } from 'expo-router'
 import { Text, View, StyleSheet, Button } from 'react-native'
 import { Image } from 'expo-image'
 const photo = require('../assets/images/react-logo.png')
+const photo2 = require('../assets/images/Belmont.jpg')
+const photo3 = require('../assets/images/Abeille.jpg')
 
 function LogoTitle() {
   return (
@@ -32,6 +34,46 @@ export default function Home() {
           <Image
             style={styles.image}
             source="https://www.usinenouvelle.com/expo/img/tuile-a-cote-de-marseille-000054811-product_zoom.jpg"
+            contentFit="cover"
+          />
+          <Link href="/details" style={styles.botton}>
+            {' '}
+            Click{' '}
+          </Link>
+        </View>
+      </View>
+
+      {/* 2d tuile */}
+      <View style={styles.boxes}>
+        <Text>
+          {' '}
+          Etuile de Belomont{'\n'}
+          Dimention: L.10 H.20
+        </Text>
+        <View>
+          <Image
+            style={styles.image}
+            source={photo2}
+            contentFit="cover"
+          />
+          <Link href="/details" style={styles.botton}>
+            {' '}
+            Click{' '}
+          </Link>
+        </View>
+      </View>
+
+      {/* 3d tuile */}
+      <View style={styles.boxes}>
+        <Text>
+          {' '}
+          Etuile de Abeille{'\n'}
+          Dimention: L.15 H.30
+        </Text>
+        <View>
+          <Image
+            style={styles.image}
+            source={photo3}
             contentFit="cover"
           />
           <Link href="/details" style={styles.botton}>
